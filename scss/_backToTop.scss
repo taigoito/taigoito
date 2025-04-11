@@ -20,9 +20,20 @@ $backBtnHeight:      3rem !default;
   padding: 0; // Reset
   border: 0;
   background-color: transparent;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: all 0.5s ease;
   text-align: center;
   outline: 0;
-  cursor: pointer;
+  cursor: default;
+  pointer-events: none;
+
+  &--active {
+    opacity: 1;
+    transform: translateY(0);
+    cursor: pointer;
+    pointer-events: auto;
+  }
 
   .icon {
     position: absolute;
@@ -33,6 +44,7 @@ $backBtnHeight:      3rem !default;
     border-radius: 50%;
     background-color: $backBtnBg;
     color: $backBtnColor;
+    transition: all 0.25s ease;
   }
 
   &:hover .icon {
