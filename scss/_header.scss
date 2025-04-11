@@ -2,18 +2,10 @@
  * Layout - Header
  */
 
-$headerHeight: 4.5rem;
-
 .header {
-  height: $headerHeight;
-
-  &__inner {
-    height: 100%;
-    background-color: $bodyBg;
-  }
-
-  &__container {
-    @include container();
-    height: 100%;
-  }
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(themeColor("lightest"), 0.7);
 }

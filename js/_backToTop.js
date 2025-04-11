@@ -4,7 +4,7 @@
  * Location: Fukui, Japan
  */
 
-class BackToTop {
+export default class BackToTop {
 
   constructor() {
     // ボタン生成

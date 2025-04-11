@@ -2,6 +2,10 @@
  * Project - Section
  */
 
+:target {
+  scroll-margin-top: space(5);
+}
+
 .section {
   &__inner {
     padding-top: space(4);
@@ -9,56 +13,69 @@
     background-color: $bodyBg;
 
     // Test Responsive Color
-    .section:nth-child(odd) & {
-      @include background("darker");
+    //.section:nth-child(odd) & {
+    //  @include background("darker");
+    //}
+
+    &--about {
+      padding-top: 0;
+    }
+  }
+
+  &__container {
+    @include container();
+    padding-top: space(2) + space(3);
+    padding-bottom: space(4);
+
+    &--about {
+      padding-top: 0;
+    }
+  }
+
+  &__content {
+    p {
+      text-align: justify;
     }
   }
 
   &__heading {
-    margin: space(3) 0;
-    text-align: center;
-  }
+    margin: space(3) 0 space();
 
-  &__container {
-    padding-top: space(2) + space(3);
-    padding-bottom: space(4);
-
-    &:not(.section--contact__container) {
-      @include container();
+    &::after {
+      content: "✶";
+      color: themeColor("secondary");
+      font-size: 1.25em;
+      margin-left: space(1);
     }
   }
 
-  &--feature {
-    &__inner {
-      padding-bottom: space(4);
-    }
+  &__subHeading {
+    margin: 0 0 space(3);
+    color: themeColor("dark");
+    font-size: 0.875rem;
+    letter-spacing: $headingLetterSpacing;
 
-    &__heading {
-      margin-bottom: space(4);
+    &::before {
+      content: "―";
+      color: themeColor("secondary");
+      font-weight: 700;
+      margin-right: space(1);
     }
   }
 
-  &--access {
-    &__inner {
-      padding-bottom: 0;
-    }
-
-    &__heading {
-      margin-bottom: space(4);
+  &__figure {
+    &--about, &--story {
+      width: min(100%, 45rem);
+      margin: 0 auto;
     }
   }
 
-  &--contact {
-    &__inner {
-      padding-top: space(4);
-    }
-
-    &__heading {
-      margin-bottom: space(4);
-    }
-
-    &__container {
-      @include container("md");
-    }
+  strong, em {
+    font-weight: 600;
+    font-style: normal;
+    color: themeColor("darker");
+    background-color: rgba(themeColor("secondary"), 0.15);
+    padding: 0 0.2em;
+    border-radius: 0.2em;
   }
 }

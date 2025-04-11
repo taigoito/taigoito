@@ -4,7 +4,7 @@
  * Location: Fukui, Japan
  */
 
-class Preloader {
+export default class Preloader {
   // 引数:isLoadManually true: 自動読み込みしない false: window.onloadで自動読み込み
   constructor(elem, isLoadManually) {
     // 要素を取得

@@ -4,7 +4,7 @@
  * Location: Fukui, Japan
  */
 
-class Fader {
+export default class Fader {
 
   constructor(elem) {
     // Faderの各要素

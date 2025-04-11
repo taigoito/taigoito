@@ -3,337 +3,72 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Starter Template</title>
+    <title>Qwel in Action: UI/UX Components</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Noto+Sans:wght@100..900&family=Noto+Serif:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./favicon.ico">
   </head>
   <body>
-    <div id="app">
-      <header id="header" class="header">
-        <div class="header__inner">
-          <div class="header__container">
-            <nav id="gNav" class="gNav">
-              <h1 class="gNav__siteBrand">
-                <a href="/" v-html="title"></a>
-              </h1>
-              <ul class="gNav__primaryMenu">
-                <li class="gNav__menuItem" v-for="section in sections"><a :href="`#${section.id}`">{{ section.name }}</a></li>
-              </ul>
-              <ul class="gNav__socialMenu">
-                <template v-for="(item, key) in social">
-                  <li class="gNav__menuItem gNav__menuItem--social" v-if="item"><a :href="`https://${key}.com/`"><span :data-icon="`ei-sc-${key}`" data-size="m"></span></a></li>
-                </template>
-              </ul>
-            </nav>
+    <div id="sentinel"></div>
+    <header id="header" class="header">
+      <nav id="gNav" class="gNav">
+        <h1 id="siteBrand" class="gNav__siteBrand">
+          <a href="/starter-demo/">
+            <img src="./assets/logo_animation.svg" alt="QWEL in Action">
+          </a>
+        </h1>
+        <ul class="gNav__primaryMenu">
+          <li class="gNav__menuItem"><a href="#about">About QWEL</a></li>
+          <li class="gNav__menuItem"><a href="#">UI/UX Components</a></li>
+          <li class="gNav__menuItem"><a href="#">Creative &amp; Crafts</a></li>
+          <li class="gNav__menuItem"><a href="#story">A Little Story</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="section section--about">
+        <div class="section__inner section__inner--about">
+          <div class="section__container section__container--about">
+            <figure class="section__figure section__figure--about">
+              <img src="./assets/fig_about.png">
+            </figure>
+            <div id="about" class="section__content">
+              <h2 class="section__heading">About QWEL</h2>
+              <p class="section__subHeading">QWELについて</p>
+              <p>Web開発・プログラミング教室を営む QWEL DESIGN (クヴェルデザイン) のクラフト作品集 <strong>"QWEL in Action"</strong> へようこそ。</p>
+              <p>これまで、UI/UX開発を数多く手掛けてきましたが、中でも<em>インタラクション設計を得意とし、多くを JavaScript によるフルスクラッチ (Vanilla JS) で実装</em>しています。必要に応じて PHP や API 連携にも対応しています。</p>
+              <p>JavaScript は、「<strong>見える</strong>」「<strong>触れる</strong>」「<strong>反応する</strong>」世界をつくることができる言語です。<br>つまり、<em>ユーザー体験そのものを設計し、演出する</em>ことができます。</p>
+              <p>さらに、柔軟で即興的な性質を持つこの言語の扱いは、まるで<em>音楽やドローイングのように自由</em>で、<em>創造の喜び</em>を味わえる営みだと感じています。</p>
+              <p>憧れの模倣や、<em>誰かのためを想ってつくる体験</em>が、<em>人の感性を育てていく</em>─<br>それが、<strong>QWEL の哲学</strong>です。</p>
+            </div>
           </div>
         </div>
-      </header>
-      <main id="main" class="main">
-        <header id="hero" class="hero">
-          <div class="hero__content">
-            <p v-html="message"></p>
-          </div>
-        </header>
-        <section :id="sections['feature'].id" class="section section--feature">
-          <div class="section__inner section--feature__inner">
-            <h2 class="section__heading section--feature__heading">{{ sections['feature'].name }}</h2>
-            <div class="slider">
-              <figure class="slider__inner">
-                <figure class="slider__item" v-for="item in sections['feature'].items">
-                  <img class="slider__image" :src="item.src">
-                  <figcaption class="slider__caption"><a href="#">{{ item.heading }}</a></figcaption>
-                </figure>
-              </figure>
+      </section>
+      <section class="section section--story">
+        <div class="section__inner section__inner--story">
+          <div class="section__container section__container--story">
+            <figure class="section__figure section__figure--story">
+              <img src="./assets/fig_story.png">
+            </figure>
+            <div id="story" class="section__content">
+              <h2 class="section__heading">A Little Story</h2>
+              <p class="section__subHeading">ちいさな物語</p>
+              <p>屋号 QWEL の由来は、子ども向けプログラミング教室を開催しようと思い立ったとき、<em>子どもが入力し易いキーボードの左上の配列 "Q", "W", "E" から</em>来ています。最後の "L" は、総当たりで<em>響きを重視</em>しました。</p>
+              <p>だから、「<strong>優しさのある技術</strong>」がコンセプトです。</p>
+              <p>そして、"QWEL" の文字をプロペラ飛行機に模してデザインしたロゴには、機能と遊び心の両方を込めています。</p>
+              <p><em>「届けたい」と思って作ること。
+                <br>「誰かの役に立ちたい」と願って飛ばすこと。</em></p>
+              <p>それが、"QWEL" の原点であり、これからも変わらない翼のかたちです。</p>
             </div>
           </div>
-        </section>
-        <section :id="sections['about'].id" class="section">
-          <div class="section__inner">
-            <h2 class="section__heading">{{ sections['about'].name }}</h2>
-            <div class="section__container">
-              <article class="postItem postItem--single">
-                <figure class="postItem__image">
-                  <img :src="sections['about'].src">
-                </figure>
-                <div class="postItem__content">
-                  <h3 class="postItem__heading">{{ sections['about'].heading }}</h3>
-                  <p class="postItem__excerpt">{{ sections['about'].excerpt }}</p>
-                  <div class="postItem__more">
-                    <a class="postItem__button" href="#">{{ sections['about'].more }}</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-        <section :id="sections['service'].id" class="section">
-          <div class="section__inner">
-            <h2 class="section__heading">{{ sections['service'].name }}</h2>
-            <div class="section__container">
-              <div class="postList postList--grid">
-                <div class="postList__item" v-for="item in sections['service'].items">
-                  <section class="postItem">
-                    <figure class="postItem__image">
-                      <img :src="item.src">
-                    </figure>
-                    <div class="postItem__content">
-                      <div class="postItem__info">
-                        <div class="postItem__date">{{ item.data }}</div>
-                        <div class="postItem__terms">
-                          <a href="#" v-for="tag in item.tags">{{ tag }}</a>
-                        </div>
-                      </div>
-                      <h3 class="postItem__heading">{{ item.heading }}</h3>
-                      <p class="postItem__excerpt">{{ item.excerpt }}</p>
-                      <div class="postItem__more">
-                        <a href="#">{{ sections['service'].more }} &gt;</a>
-                      </div>
-                    </div>
-                  </section>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section :id="sections['news'].id" class="section">
-          <div class="section__inner">
-            <h2 class="section__heading">{{ sections['news'].name }}</h2>
-            <div class="section__container">
-              <ul class="postList postList--list">
-                <li class="postList__item" v-for="item in sections['news'].items">
-                  <div class="postItem">
-                    <figure class="postItem__image">
-                      <img :src="item.src">
-                    </figure>
-                    <div class="postItem__content">
-                      <div class="postItem__info">
-                        <div class="postItem__date">{{ item.date }}</div>
-                        <div class="postItem__terms">
-                          <a href="#" v-for="tag in item.tags">{{ tag }}</a>
-                        </div>
-                      </div>
-                      <h3 class="postItem__heading">{{ item.heading }}</h3>
-                      <p class="postItem__excerpt">{{ item.excerpt }}</p>
-                      <div class="postItem__more">
-                        <a href="#">{{ sections['news'].more }} &gt;</a>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <section :id="sections['team'].id" class="section">
-          <div class="section__inner">
-            <h2 class="section__heading">{{ sections['team'].name }}</h2>
-            <div class="section__container">
-              <article class="postItem postItem--single">
-                <figure class="postItem__image">
-                  <img :src="sections['team'].src">
-                </figure>
-                <div class="postItem__content">
-                  <h3 class="postItem__heading">{{ sections['team'].heading }}</h3>
-                  <p class="postItem__excerpt">{{ sections['team'].excerpt }}</p>
-                  <div class="postItem__more">
-                    <a class="postItem__button" href="#">{{ sections['team'].more }}</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-        <section :id="sections['access'].id" class="section section--access">
-          <div class="section__inner section--access__inner">
-            <h2 class="section__heading section--access__heading">{{ sections['access'].name }}</h2>
-            <div class="embed --mt_4">
-              <iframe :src="sections['access'].src"></iframe>
-              <div class="embed__cover">
-                <p class="embed__info">クリックするとマップを拡大/縮小できるようになります。</p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section :id="sections['contact'].id" class="section section--contact">
-          <div class="section__inner">
-            <h2 class="section__heading">{{ sections['contact'].name }}</h2>
-            <div class="section__container section--contact__container">
-              <form class="form" method="post" action="./php/mail.php">
-                <table class="form__table">
-                  <tr>
-                    <th><label for="yourname">氏名<span class="required">*必須</span></label></th>
-                    <td><input id="yourname" size="30" type="text" name="氏名"></td>
-                  </tr>
-                  <tr>
-                    <th><label for="youremail">メールアドレス<span class="required">*必須</span></label></th>
-                    <td><input id="youremail" size="30" type="email" name="Email"></td>
-                  </tr>
-                  <tr>
-                    <th><label for="yoursubject">題名</label></th>
-                    <td>
-                      <select id="yoursubject" name="題名">
-                        <option value="ご質問・お問い合わせ">ご質問・お問い合わせ</option>
-                        <option value="その他">その他</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th><label for="yourcontent">メッセージ本文</label></th>
-                    <td><textarea id="yourcontent" name="メッセージ本文" cols="30" rows="6"></textarea></td>
-                  </tr>
-                </table>
-                <div class="form__buttons">
-                  <input type="submit" value="確認">
-                </div>
-              </form>
-            </div>
-          </div>
-        </section>
-      </main>
-      <div class="cover fader preloader" data-spinner-off="true">
-        <div class="cover__inner">
-          <div class="cover__image cover__image--num_1"></div>
-          <div class="cover__image cover__image--num_2"></div>
-          <div class="cover__image cover__image--num_3"></div>
-          <div class="cover__image cover__image--num_4"></div>
         </div>
-      </div>
-      <footer id="footer" class="footer">
-        <small v-html="copyright"></small>
-      </footer>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.0/vue.global.js"></script>
-    <script>
-      const data = {
-        data() {
-          return {
-            title: 'Site Title',
-            message: 'Welcome to our website.',
-            sections: {
-              feature: {
-                id: 'feature',
-                name: 'feature',
-                items: [
-                  {
-                    heading: 'feature-1',
-                    src: './assets/sampleImg00.jpg'
-                  },
-                  {
-                    heading: 'feature-2',
-                    src: './assets/sampleImg01.jpg'
-                  },
-                  {
-                    heading: 'feature-3',
-                    src: './assets/sampleImg02.jpg'
-                  },
-                  {
-                    heading: 'feature-4',
-                    src: './assets/sampleImg03.jpg'
-                  }
-                ]
-              },
-              about: {
-                id: 'about',
-                name: 'about',
-                heading: 'Mission',
-                excerpt: 'Our mission is ...',
-                src: './assets/sampleImg01.jpg',
-                more: 'read more'
-              },
-              service: {
-                id: 'service',
-                name: 'service',
-                more: 'read more',
-                items: [
-                  {
-                    date: '2023-01-01',
-                    heading: 'service-1',
-                    tags: ['news', 'info'],
-                    excerpt: 'Today is ...',
-                    src: './assets/sampleImg02.jpg'
-                  },
-                  {
-                    date: '2023-01-02',
-                    heading: 'service-2',
-                    tags: ['news'],
-                    excerpt: 'Today is ...',
-                    src: './assets/sampleImg03.jpg'
-                  },
-                  {
-                    date: '2023-01-03',
-                    heading: 'service-3',
-                    tags: ['info'],
-                    excerpt: 'Today is ...',
-                    src: './assets/sampleImg04.jpg'
-                  }
-                ]
-              },
-              news: {
-                id: 'news',
-                name: 'news',
-                more: 'read more',
-                items: [
-                {
-                    date: '2023-01-01',
-                    heading: 'news-1',
-                    tags: ['news', 'info'],
-                    excerpt: 'Today is ...',
-                    src: './assets/sampleImg03.jpg'
-                  },
-                  {
-                    date: '2023-01-02',
-                    heading: 'news-2',
-                    tags: ['news'],
-                    excerpt: 'Today is ...',
-                    src: './assets/sampleImg04.jpg'
-                  },
-                  {
-                    date: '2023-01-03',
-                    heading: 'news-3',
-                    tags: ['info'],
-                    excerpt: 'Today is ...',
-                    src: './assets/sampleImg05.jpg'
-                  }
-                ]
-              },
-              team: {
-                id: 'team',
-                name: 'team',
-                heading: 'Mission',
-                excerpt: 'Our mission is ...',
-                src: './assets/sampleImg04.jpg',
-                more: 'read more'
-              },
-              access: {
-                id: 'access',
-                name: 'access',
-                src: 'https://www.google.com/maps/embed'
-              },
-              contact: {
-                id: 'contact',
-                name: 'contact'
-              }
-            },
-            social: {
-              twitter: true,
-              facebook: true,
-              instagram: true
-            },
-            copyright: '&copy; 2019 - 2025 QWEL DESIGN'
-          };
-        }
-      }
-
-      Vue.createApp(data).mount('#app');
-    </script>
-    <script src="./js/backToTop.js"></script>
-    <script src="./js/drawerMenu.js"></script>
-    <script src="./js/embed.js"></script>
-    <script src="./js/evilIcons.js"></script>
-    <script src="./js/fader.js"></script>
-    <script src="./js/preloader.js"></script>
-    <script src="./js/responsiveColor.js"></script>
-    <script src="./js/slider.js"></script>
-    <script src="./init.js"></script>
+      </section>
+    </main>
+    <footer id="footer" class="footer">
+      <small v-html="copyright"></small>
+    </footer>
+    <script src="./init.js" type="module"></script>
   </body>
 </html>

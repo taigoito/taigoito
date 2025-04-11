@@ -4,7 +4,7 @@
  * Location: Fukui, Japan
  */
 
-class Embed {
+export default class Embed {
 
   constructor() {
     // 要素を取得

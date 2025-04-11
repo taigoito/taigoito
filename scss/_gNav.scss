@@ -3,30 +3,45 @@
  */
 
 .gNav {
-  @include row(space-between);
-  height: 100%;
+  @include row(flex-start);
+  gap: space(4);
+  @include container();
+  height: 9rem;
+  transition: all 0.5s ease;
+
+  &--shrink {
+    height: 6rem;
+  }
 
   &__siteBrand {
-    flex: 0 1 9rem;
+    display: block;
+    flex: 0 0 auto;
+    width: fit-content;
+    height: 100%;
     margin: 0;
+    transition: all 0.5s ease;
+
+    img {
+      width: auto;
+      height: 100%;
+      transition: all 0.5s ease;
+    }
   }
 
   &__primaryMenu {
     @include listUnstyled();
     @include row();
-    flex: 0 1 30rem;
+    gap: space(4);
+    flex: 0 0 auto;
     margin: 0;
+    font-family: $headingFontFamily;
+    font-weight: $headingFontWeight;
+    font-size: 1.25rem;
+    transition: all 0.5s ease;
 
-    @media (max-width: breakpoint("md") - 0.1) {
-      display: none;
+    @at-root .gNav--shrink & {
+      font-size: 1rem;
     }
-  }
-
-  &__socialMenu {
-    @include listUnstyled();
-    @include row();
-    flex: 0 1 9rem;
-    margin: 0;
 
     @media (max-width: breakpoint("md") - 0.1) {
       display: none;

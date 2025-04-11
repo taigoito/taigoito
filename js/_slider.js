@@ -4,7 +4,7 @@
  * Location: Fukui, Japan
  */
 
-class Slider {
+export default class Slider {
 
   constructor(elem) {
     // Sliderの各要素

@@ -4,7 +4,7 @@
  * Location: Fukui, Japan
  */
 
-class ResponsiveColor {
+export default class ResponsiveColor {
 
   constructor(elems) {
     // 要素を取得
