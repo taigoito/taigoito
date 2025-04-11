@@ -817,6 +817,36 @@ button, input, select, textarea {
   font-weight: 700;
   margin-right: 0.375rem;
 }
+.section__list {
+  list-style-type: none;
+  position: relative;
+  padding: 0 1.5rem;
+}
+.section__listItem::before {
+  content: "✶";
+  position: absolute;
+  top: -0.4em;
+  right: calc(100% - 1.2rem);
+  color: #79c6ec;
+  font-size: 1.5em;
+}
+.section__listItem h4 {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1rem;
+  color: #4d4d4d;
+  background-color: rgba(32, 159, 223, 0.1);
+  padding: 0 0.2em;
+  border-radius: 0.2em;
+}
+.section__listItem p {
+  margin: 0.375rem 0;
+  font-size: 0.875rem;
+  text-align: justify;
+}
 .section__figure--about, .section__figure--story {
   width: min(100%, 45rem);
   margin: 0 auto;

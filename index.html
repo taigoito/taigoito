@@ -21,7 +21,7 @@
         </h1>
         <ul class="gNav__primaryMenu">
           <li class="gNav__menuItem"><a href="#about">About QWEL</a></li>
-          <li class="gNav__menuItem"><a href="#">UI/UX Components</a></li>
+          <li class="gNav__menuItem"><a href="#components">UI/UX Components</a></li>
           <li class="gNav__menuItem"><a href="#">Creative &amp; Crafts</a></li>
           <li class="gNav__menuItem"><a href="#story">A Little Story</a></li>
         </ul>
@@ -43,6 +43,29 @@
               <p>さらに、柔軟で即興的な性質を持つこの言語の扱いは、まるで<em>音楽やドローイングのように自由</em>で、<em>創造の喜び</em>を味わえる営みだと感じています。</p>
               <p>憧れの模倣や、<em>誰かのためを想ってつくる体験</em>が、<em>人の感性を育てていく</em>─<br>それが、<strong>QWEL の哲学</strong>です。</p>
             </div>
+          </div>
+        </div>
+      </section>
+      <section class="section section--components">
+        <div class="section__inner section__inner--components">
+          <div id="components" class="section__container section__container--components">
+            <h2 class="section__heading">UI/UX Components</h2>
+            <p class="section__subHeading">実務用UI/UXコンポーネント</p>
+            <p>基本的な設計志向として、各コンポーネントはSCSSとJSの2対1組のファイルのみで動きます。
+              <br>最軽量の形態として、各々バンドルし、1つのCSSファイルと、1つのJSファイルで済むことを目指しています。</p>
+            <p>JSファイルはモジュールとしてインポートして使用する前提で、クラスのインスタンスを生成するだけで初期化されます。
+              <br>WordPressに用いる場合などは、webpackでBabelを使用してバンドルを行う必要があります。</p>
+            <ul class="section__list">
+              <li class="section__listItem">
+                <h3>BackToTop</h3>
+                <h4>概要</h4>
+                <p>よく見かける「トップへ戻る」ボタンです。</p>
+                <p>モバイル閲覧時のストレス（スクロール疲れ、迷子等）を軽減する簡単なUX補助を目的として設置します。</p>
+                <h4>設計・工夫</h4> 
+                <p>フワッと出現し、ユーザーの邪魔にならない位置で自然に活用される設計を目指しています。</p>
+                <p>開発側では、パラメーターで出現のタイミングをある程度制御できます。</p>
+              </li>
+            </ul>
           </div>
         </div>
       </section>

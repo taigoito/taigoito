@@ -63,6 +63,41 @@
     }
   }
 
+  &__list {
+    list-style-type: none;
+    position: relative;
+    padding: 0 space(3);
+  }
+
+  &__listItem {
+    &::before {
+      content: '✶';
+      position: absolute;
+      top: -0.4em;
+      right: calc(100% - 1.2rem);
+      color: themeColor("primaryLight");
+      font-size: 1.5em;
+    }
+
+    h4 {
+      width: fit-content;
+      font-family: $fontFamilySansSerif;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 1rem;
+      color: themeColor("darker");
+      background-color: rgba(themeColor("primary"), 0.1);
+      padding: 0 0.2em;
+      border-radius: 0.2em;
+    }
+
+    p {
+      margin: space(1) 0;
+      font-size: 0.875rem;
+      text-align: justify;
+    }
+  }
+
   &__figure {
     &--about, &--story {
       width: min(100%, 45rem);
