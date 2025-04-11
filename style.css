@@ -224,9 +224,19 @@ button, input, select, textarea {
   padding: 0;
   border: 0;
   background-color: transparent;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: all 0.5s ease;
   text-align: center;
   outline: 0;
+  cursor: default;
+  pointer-events: none;
+}
+.backToTop--active {
+  opacity: 1;
+  transform: translateY(0);
   cursor: pointer;
+  pointer-events: auto;
 }
 .backToTop .icon {
   position: absolute;
@@ -237,6 +247,7 @@ button, input, select, textarea {
   border-radius: 50%;
   background-color: #3399cc;
   color: #ffffff;
+  transition: all 0.25s ease;
 }
 .backToTop:hover .icon {
   background-color: #85c2e0;
