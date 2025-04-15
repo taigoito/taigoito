@@ -4,167 +4,44 @@
  * Location: Fukui, Japan
  */
 
-import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.0/vue.esm-browser.prod.js';
-
-const data = {
-  data() {
-    return {
-      sections: {
-        feature: {
-          id: 'feature',
-          name: 'feature',
-          items: [
-            {
-              heading: 'feature-1',
-              src: './assets/sampleImg00.jpg'
-            },
-            {
-              heading: 'feature-2',
-              src: './assets/sampleImg01.jpg'
-            },
-            {
-              heading: 'feature-3',
-              src: './assets/sampleImg02.jpg'
-            },
-            {
-              heading: 'feature-4',
-              src: './assets/sampleImg03.jpg'
-            }
-          ]
-        },
-        about: {
-          id: 'about',
-          name: 'about',
-          heading: 'Mission',
-          excerpt: 'Our mission is ...',
-          src: './assets/sampleImg01.jpg',
-          more: 'read more'
-        },
-        service: {
-          id: 'service',
-          name: 'service',
-          more: 'read more',
-          items: [
-            {
-              date: '2025-04-01',
-              heading: 'service-1',
-              tags: ['news', 'info'],
-              excerpt: 'Today is ...',
-              src: './assets/sampleImg02.jpg'
-            },
-            {
-              date: '2025-04-02',
-              heading: 'service-2',
-              tags: ['news'],
-              excerpt: 'Today is ...',
-              src: './assets/sampleImg03.jpg'
-            },
-            {
-              date: '2025-04-03',
-              heading: 'service-3',
-              tags: ['info'],
-              excerpt: 'Today is ...',
-              src: './assets/sampleImg04.jpg'
-            }
-          ]
-        },
-        news: {
-          id: 'news',
-          name: 'news',
-          more: 'read more',
-          items: [
-          {
-              date: '2025-04-01',
-              heading: 'news-1',
-              tags: ['news', 'info'],
-              excerpt: 'Today is ...',
-              src: './assets/sampleImg03.jpg'
-            },
-            {
-              date: '2025-04-02',
-              heading: 'news-2',
-              tags: ['news'],
-              excerpt: 'Today is ...',
-              src: './assets/sampleImg04.jpg'
-            },
-            {
-              date: '2025-04-03',
-              heading: 'news-3',
-              tags: ['info'],
-              excerpt: 'Today is ...',
-              src: './assets/sampleImg05.jpg'
-            }
-          ]
-        },
-        team: {
-          id: 'team',
-          name: 'team',
-          heading: 'Mission',
-          excerpt: 'Our mission is ...',
-          src: './assets/sampleImg04.jpg',
-          more: 'read more'
-        },
-        access: {
-          id: 'access',
-          name: 'access',
-          src: 'https://www.google.com/maps/embed'
-        },
-        contact: {
-          id: 'contact',
-          name: 'contact',
-          description: 'サンプルデモページであるため、このフォームは機能しません。'
-        }
-      },
-      social: {
-        twitter: true,
-        facebook: true,
-        instagram: true
-      },
-      copyright: '&copy; 2019 - 2025 QWEL DESIGN'
-    };
-  }
-}
-
-createApp(data).mount('#app');
-
-// Header toggle
+// G Nav Shrink
 window.addEventListener('scroll', () => {
-  const header = document.getElementById('header');
+  const gNav = document.getElementById('gNav');
   if (0 < window.scrollY) {
-    header.classList.add('header--active');
+    gNav.classList.add('gNav--shrink');
   } else {
-    header.classList.remove('header--active');
+    gNav.classList.remove('gNav--shrink');
   }
 });
 
 // Back To Top
 import BackToTop from './js/backToTop.js';
-new BackToTop();
+new BackToTop({darkMode: true});
 
 // Drawer Menu
 import DrawerMenu from './js/drawerMenu.js';
-new DrawerMenu({responsiveColor: true});
+new DrawerMenu({darkMode: true, responsiveColor: true});
 
 // Embed
-import Embed from './js/embed.js';
-new Embed();
+//import Embed from './js/embed.js';
+//new Embed();
 
 // Fader
-import Fader from './js/fader.js';
-new Fader();
+//import Fader from './js/fader.js';
+//new Fader();
 
 // Evil Icons
 import EvilIcons from './js/evilIcons.js';
 new EvilIcons();
 
 // Preloader
-import Preloader from './js/preloader.js';
-new Preloader();
+//import Preloader from './js/preloader.js';
+//new Preloader();
 
 // Responsive Color
-import ResponsiveColor from './js/responsiveColor.js';
-new ResponsiveColor();
+//import ResponsiveColor from './js/responsiveColor.js';
+//new ResponsiveColor();
 
 // Slider
-import Slider from './js/slider.js';
-new Slider();
+//import Slider from './js/slider.js';
+//new Slider();

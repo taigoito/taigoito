@@ -1,8 +1,49 @@
 // Variables
 
-//$fontFamilySansSerif:  "Noto Sans JP", sans-serif;
-//$fontFamilySerif:      "Noto Serif JP", serif;
-//$fontWeightSansSerif:  400;
-//$fontWeightSerif:      400;
+$themeColors:    (
+  darkest:         #262626, // 15%
+  darker:          #4d4d4d, // 30%
+  dark:            #808080, // 50%
+  light:           #b3b3b3, // 70%
+  lighter:         #d9d9d9, // 85%
+  lightest:        #ffffff, // 100%
+  primary:         #209fdf, // hsl(200, 75%, 50%)
+  primaryLight:    #79c6ec, // hsl(200, 75%, 70%)
+  secondary:       #ffc080, // hsl(30, 100%, 75%)
+  tertiary:        #99cc33  // hsl(80, 60%, 50%)
+);
 
-$drawerTransparent: true;
+$gridBase:       6rem;
+
+$breakpoints:    (
+  sm:              600px,
+  md:              800px,
+  lg:              1000px
+);
+
+$containerWidths:(
+  sm:              600px,
+  md:              800px,
+  lg:              1000px
+);
+
+$gutter:         $gridBase / 8;
+$containerPad:   (
+  sm:              $gutter,
+  md:              clamp(#{$gutter}, 2%, #{$gridBase / 6}),
+  lg:              clamp(#{$gutter}, 2%, 20px)
+) !default;
+
+$fontFamilySansSerif:  "Noto Sans", sans-serif;
+$fontFamilySerif:      "Cormorant Garamond", "Noto Serif", serif;
+$fontWeightSansSerif:  400;
+$fontWeightSerif:      500;
+$letterSpacingBase:    0.02em;
+$headingFontFamily:    $fontFamilySerif;
+$headingFontWeight:    $fontWeightSerif;
+$headingLetterSpacing: 0.04em;
+
+$backBtnPad:         1.5rem;
+$drawerPad:          1.5rem;
+$drawerBreakpoint:   map-get($breakpoints, "lg");
+$drawerImageLighten: none;

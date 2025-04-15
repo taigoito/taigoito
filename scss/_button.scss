@@ -1,0 +1,36 @@
+/**
+ * Button
+ */
+
+.button {
+  @include makeBlock(18rem);
+  @include makeButton();
+  @include row(center, center);
+  height: 4.5rem;
+  padding: 0;
+
+  @each $key, $color in $themeColors {
+    &--#{$key} {
+      background-color: $color;
+
+      &, &:active, &:hover, &:focus {
+        color: colorYiq($color);
+      }
+    }
+  }
+
+  &__icon {
+    flex: 0 0 3.75rem;
+
+    &.icon--ei-sc-github.icon--m {
+      flex: 0 0 3.75rem;
+      width: 3.75rem;
+      height: 3.75rem;
+    } 
+  }
+
+  &__text {
+    flex: 0 0 10.5rem;
+    padding-right: 3.75rem;
+  }
+}

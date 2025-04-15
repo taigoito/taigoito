@@ -6,4 +6,21 @@
   padding: space(5);
   @include background("primary");
   text-align: center;
+
+  &__inner {
+    @include row(center);
+    gap: space(4);
+    @include container();
+  }
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    @include smallText();
+
+    &--github .icon--m {
+      width: 3.75rem;
+      height: 3.75rem;
+    }
+  }
 }
