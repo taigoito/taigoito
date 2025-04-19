@@ -2,28 +2,22 @@
  * Component - Back To Top
  */
 
-$backBtnBg:              themeColor("lighter") !default;
-$backBtnColor:           colorYiq(themeColor("lighter")) !default;
-$backBtnHoverBg:         themeColor("primary") !default;
-$backBtnHoverColor:      colorYiq(themeColor("primary")) !default;
-$backBtnDarkBg:          themeColor("primary") !default;
-$backBtnDarkColor:       colorYiq(themeColor("primary")) !default;
-$backBtnDarkHoverBg:     themeColor("primaryLight") !default;
-$backBtnDarkHoverColor:  colorYiq(themeColor("primaryLight")) !default;
+$backBtnBg:              $iconBg !default;
+$backBtnColor:           colorYiq($backBtnBg) !default;
+$backBtnHoverBg:         $iconHoverBg !default;
+$backBtnHoverColor:      colorYiq($backBtnHoverBg) !default;
 $backBtnPad:             space() !default;
 $backBtnHeight:          3rem !default;
 
 .backToTop {
   position: fixed;
-  right: 0;
-  bottom: 0;
+  right: $backBtnPad;
+  bottom: $backBtnPad;
   z-index: 1000;
   display: block;
-  width: $backBtnPad * 2 + $backBtnHeight;
-  height: $backBtnPad * 2 + $backBtnHeight;
+  width: $backBtnHeight;
+  height: $backBtnHeight;
   padding: 0; // Reset
-  border: 0;
-  background-color: transparent;
   opacity: 0;
   transform: translateY(1rem) rotateY(-180deg);
   transition: all 0.5s ease;
@@ -39,30 +33,5 @@ $backBtnHeight:          3rem !default;
     pointer-events: auto;
   }
 
-  .icon {
-    position: absolute;
-    right: $backBtnPad;
-    bottom: $backBtnPad;
-    width: $backBtnHeight;
-    height: $backBtnHeight;
-    border-radius: 50%;
-    background-color: $backBtnBg;
-    color: $backBtnColor;
-    transition: all 0.25s ease;
-  }
-
-  &:hover .icon {
-    background-color: $backBtnHoverBg;
-    color: $backBtnHoverColor;
-  }
-
-  &--dark .icon{
-    background-color: $backBtnDarkBg;
-    color: $backBtnDarkColor;
-  }
-
-  &--dark:hover .icon {
-    background-color: $backBtnDarkHoverBg;
-    color: $backBtnDarkHoverColor;
-  }
+  @include useIcon($backBtnBg, $backBtnColor, $backBtnHoverBg, $backBtnHoverColor, 50%);
 }

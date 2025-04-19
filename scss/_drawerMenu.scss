@@ -2,36 +2,27 @@
  * Component - Drawer Menu
  */
 
-$drawerAlwaysShown:            false !default;
-$drawerBreakpoint:             breakpoint("md") !default;
-$drawerPad:                    space() !default;
-$drawerHeight:                 3rem !default;
-$drawerRounded:                false !default;
-$drawerTransparent:            false !default;
-$drawerBg:                     themeColor("lighter") !default;
-$drawerColor:                  colorYiq(themeColor("lighter")) !default;
-$drawerHoverColor:             themeColor("primary") !default;
-$drawerDarkBg:                 themeColor("primary") !default;
-$drawerDarkColor:              colorYiq(themeColor("primary")) !default;
-$drawerDarkHoverColor:         colorYiq(themeColor("primary")) !default;
-$drawerNaviconBg:              themeColor("lighter") !default;
-$drawerNaviconColor:           colorYiq(themeColor("lighter")) !default;
-$drawerNaviconHoverBg:         themeColor("primary") !default;
-$drawerNaviconHoverColor:      colorYiq(themeColor("primary")) !default;
-$drawerNaviconDarkBg:          themeColor("primary") !default;
-$drawerNaviconDarkColor:       colorYiq(themeColor("primary")) !default;
-$drawerNaviconDarkHoverBg:     themeColor("primaryLight") !default;
-$drawerNaviconDarkHoverColor:  colorYiq(themeColor("primaryLight")) !default;
-$drawerImageLighten:           invert(1) grayscale(1) brightness(4) !default;  
+$drawerAlwaysShown:        false !default;
+$drawerBreakpoint:         breakpoint("md") !default;
+$drawerPad:                space() !default;
+$drawerHeight:             3rem !default;
+$drawerBg:                 $iconBg !default;
+$drawerColor:              colorYiq($drawerBg) !default;
+$drawerHoverColor:         $linkHoverColor !default;;
+$drawerNaviconBg:          $iconBg !default;
+$drawerNaviconColor:       colorYiq($iconBg) !default;
+$drawerNaviconHoverBg:     $iconHoverBg !default;
+$drawerNaviconHoverColor:  colorYiq($iconHoverBg) !default;
+$drawerImageLighten:       invert(1) grayscale(1) brightness(4) !default;  
 
 .drawer {
   position: fixed;
-  top: 0;
-  right: 0;
+  top: $drawerPad;
+  right: $drawerPad;
   z-index: 1110;
   display: block;
-  width: $drawerPad * 2 + $drawerHeight;
-  height: $drawerPad * 2 + $drawerHeight;
+  width: $drawerHeight;
+  height: $drawerHeight;
   padding: 0; // Reset
   border: 0;
   background-color: transparent; // Reset
@@ -45,39 +36,15 @@ $drawerImageLighten:           invert(1) grayscale(1) brightness(4) !default;
     }
   }
 
-  &__navicon.icon, &__close.icon {
-    position: absolute;
-    top: $drawerPad;
-    right: $drawerPad;
-    width: $drawerHeight;
-    height: $drawerHeight;
-    @if $drawerRounded == false {
-      border-radius: 0;
-    } @else {
-      border-radius: 50%;
-    }
-    transition: all 0.5s ease;
-  }
-
   &__navicon {
+    position: absolute;
+    top: 0;
+    right: 0;
     z-index: 1110;
-    @if $drawerTransparent == false {
-      background-color: $drawerNaviconBg;
-    } @else {
-      background-color: transparent;
-    }
-    color: $drawerNaviconColor;
+    @include useIcon($drawerNaviconBg, $drawerNaviconColor, $drawerNaviconHoverBg, $drawerNaviconHoverColor);
     opacity: 0;
     transform: rotateY(-180deg);
-
-    &:hover {
-      @if $drawerTransparent == false {
-        background-color: $drawerNaviconHoverBg;
-      } @else {
-        background-color: transparent;
-      }
-      color: $drawerNaviconHoverColor;
-    }
+    transition: all 0.5s ease;
 
     @at-root .drawer:not(.drawer--active):not(.drawer--ready) .drawer__navicon {
       opacity: 1;
@@ -86,31 +53,18 @@ $drawerImageLighten:           invert(1) grayscale(1) brightness(4) !default;
   }
 
   &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
     z-index: 1100;
-    background-color: transparent;
-    color: colorYiq($drawerBg);
+    @include useIcon($drawerBg, $drawerColor, $drawerBg, $drawerHoverColor);
     opacity: 1;
     transform: rotateY(0);
+    transition: all 0.5s ease;
 
     @at-root .drawer:not(.drawer--active) .drawer__close {
       opacity: 0;
       transform: rotateY(180deg);
-    }
-  }
-
-  &--dark {
-    .drawer__navicon {
-      background-color: $drawerNaviconDarkBg;
-      color: $drawerNaviconDarkColor;
-
-      &:hover {
-        background-color: $drawerNaviconDarkHoverBg;
-        color: $drawerNaviconDarkHoverColor;
-      }
-    }
-    
-    .drawer__close {
-      color: colorYiq($drawerDarkBg);
     }
   }
 }
@@ -171,9 +125,20 @@ $drawerImageLighten:           invert(1) grayscale(1) brightness(4) !default;
     text-transform: capitalize;
 
     a {
+      display: block;
       padding-top: space(1);
       padding-left: 20%;
       padding-bottom: space(1);
+      color: $drawerColor;
+      fill: $drawerColor;
+      text-decoration: none;
+      transition: all 0.25s ease;
+
+      &:hover {
+        background-color: lighten($drawerBg, 5%);
+        color: $drawerHoverColor;
+        fill: $drawerHoverColor;
+      }
     }
 
     &--siteBrand {
@@ -197,6 +162,9 @@ $drawerImageLighten:           invert(1) grayscale(1) brightness(4) !default;
       padding-bottom: 1rem;
 
       a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
         width: 3rem;
         height: 3rem;
         padding: 0;
@@ -205,41 +173,6 @@ $drawerImageLighten:           invert(1) grayscale(1) brightness(4) !default;
       img {
         width: 100%;
         height: auto;
-      }
-    }
-
-    a {
-      display: block;
-      color: $drawerColor;
-      fill: $drawerColor;
-      text-decoration: none;
-      transition: all 0.25s ease;
-
-      &:hover {
-        background-color: lighten($drawerBg, 5%);
-        color: $drawerHoverColor;
-        fill: $drawerHoverColor;
-      }
-    }
-  }
-
-  &--dark {
-    background-color: $drawerDarkBg;
-
-    .drawerMenu__item {
-      a {
-        color: $drawerDarkColor;
-        fill: $drawerDarkColor;
-
-        &:hover {
-          background-color: lighten($drawerDarkBg, 5%);
-          color: $drawerDarkHoverColor;
-          fill: $drawerDarkHoverColor;
-        }
-      }
-
-      img {
-        filter: $drawerImageLighten;
       }
     }
   }

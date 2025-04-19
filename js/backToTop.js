@@ -6,17 +6,15 @@
 
 export default class BackToTop {
   // options
-  // darkMode: ダークモード
   // size: ボタンが出現する位置 (window.innerHeightの何倍か) を設定可能
   constructor(options = {}) {
     // ボタン生成
-    this._btn = document.createElement('button');
+    this._btn = document.createElement('div');
     this._btn.classList.add('backToTop');
-    if (options.darkMode) this._btn.classList.add('backToTop--dark');
-    this._icon = document.createElement('span');
-    this._icon.dataset.icon = 'ei-chevron-up';
-    this._icon.dataset.size = 'm';
-    this._btn.appendChild(this._icon);
+    const icon = document.createElement('div');
+    icon.classList.add('icon', 'icon--chevron-up', 'icon--lg');
+    icon.innerHTML = '<span class="icon__span"></span>';
+    this._btn.appendChild(icon);
 
     // ボタン設置
     const body = document.body;

@@ -43,6 +43,8 @@ $headingFontFamily:    $fontFamilySerif;
 $headingFontWeight:    $fontWeightSerif;
 $headingLetterSpacing: 0.04em;
 
+$iconBg:             map-get($themeColors, "primary");
+$iconHoverBg:        map-get($themeColors, "primaryLight");
 $backBtnPad:         1.5rem;
 $drawerPad:          1.5rem;
 $drawerBreakpoint:   map-get($breakpoints, "lg");

@@ -5,10 +5,12 @@
 $sliderAspectRatio:        8 / 5 !default;
 $sliderBreakPoint:         breakpoint("md") !default;
 $sliderHeight:             24rem !default;
-$sliderButtonColor:        themeColor("light") !default;
-$sliderButtonActiveColor:  themeColor("primary") !default;
-$sliderNavColor:           themeColor("lighter") !default;
-$sliderNavActiveColor:     themeColor("primary") !default;
+$sliderButtonBg:           $iconBg !default;
+$sliderButtonColor:        colorYiq($sliderButtonBg) !default;
+$sliderButtonHoverBg:      $iconHoverBg !default;
+$sliderButtonHoverColor:   colorYiq($sliderButtonHoverBg) !default;
+$sliderNavColor:           $linkColor !default;
+$sliderNavActiveColor:     $linkHoverColor !default;
 
 .slider {
   position: relative;
@@ -77,24 +79,20 @@ $sliderNavActiveColor:     themeColor("primary") !default;
     top: 0;
     bottom: 0;
     display: block;
-    height: 4.5rem; // アイコンのサイズ
+    height: 2.25rem; // アイコンのサイズ
     margin: auto;
     border: 0;
-    background-color: transparent;
-    color: $sliderButtonColor;
     text-align: center;
-    
-    &:hover {
-      color: $sliderButtonActiveColor;
-    }
+
+    @include useIcon($sliderButtonBg, $sliderButtonColor, $sliderButtonHoverBg, $sliderButtonHoverColor, 50%);
   }
 
   &__prev {
-    left: 0;
+    left: 2%;
   }
 
   &__next {
-    right: 0;
+    right: 2%;
   }
   
   &__nav {

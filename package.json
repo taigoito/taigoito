@@ -1,6 +1,6 @@
 {
-  "name": "qwel-starter-template",
-  "version": "1.2",
+  "name": "qwel-in-action",
+  "version": "1.3",
   "description": "",
   "main": "init.js",
   "scripts": {
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/taigoito/qwel-starter-template.git"
+    "url": "git+https://github.com/taigoito/taigoito.git"
   },
   "author": "Taigo Ito",
   "license": "GPL",
   "bugs": {
-    "url": "https://github.com/taigoito/qwel-starter-template/issues"
+    "url": "https://github.com/taigoito/taigoito/issues"
   },
-  "homepage": "https://github.com/taigoito/qwel-starter-template#readme"
+  "homepage": "https://github.com/taigoito/taigoito#readme"
 }

@@ -14,13 +14,17 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// Auto Copyright
+import AutoCopyright from './js/autoCopyright.js';
+new AutoCopyright(2019, 'QWEL.DESIGN');
+
 // Back To Top
 import BackToTop from './js/backToTop.js';
 new BackToTop({darkMode: true});
 
 // Drawer Menu
 import DrawerMenu from './js/drawerMenu.js';
-new DrawerMenu({darkMode: true, responsiveColor: true});
+new DrawerMenu();
 
 // Embed
 //import Embed from './js/embed.js';
@@ -29,10 +33,6 @@ new DrawerMenu({darkMode: true, responsiveColor: true});
 // Fader
 //import Fader from './js/fader.js';
 //new Fader();
-
-// Evil Icons
-import EvilIcons from './js/evilIcons.js';
-new EvilIcons();
 
 // Preloader
 //import Preloader from './js/preloader.js';

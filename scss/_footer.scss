@@ -3,7 +3,7 @@
  */
 
 .footer {
-  padding: space(5);
+  padding: space(5) 0;
   @include background("primary");
   text-align: center;
 
@@ -18,9 +18,8 @@
     align-items: center;
     @include smallText();
 
-    &--github .icon--m {
-      width: 3.75rem;
-      height: 3.75rem;
+    .icon {
+      margin-right: space(1);
     }
   }
 }
