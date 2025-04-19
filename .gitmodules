@@ -1,0 +1,7 @@
+[submodule "demo"]
+	path = demo
+	url = https://github.com/taigoito/taigoito
+	branch = demo
+[submodule "creative"]
+	path = creative
+	url = https://github.com/taigoito/qwel-creative
